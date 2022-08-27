@@ -1,0 +1,35 @@
+#!/bin/bash
+
+print_disk(){
+    disk_free_root=$(df -h | awk '{ if ($6 == "/") print $4 }')
+    disk_free_home=$(df -h | awk '{ if ($6 == "/home") print $4 }')
+    echo -e "⛁ $disk_free_root | ⛁ $disk_free_home"
+}
+
+print_mem(){
+    mem_tot=$(free -h | awk '(NR==2){ print $2 }')
+    mem_used=$(free -h | awk '(NR==2){ print $3 }')
+    echo -e "$mem_used/$mem_tot"
+}
+
+print_load(){
+    echo -e "$(head -c 14 /proc/loadavg)"
+}
+
+print_temp(){
+    cpu_temp=$(sed 's/000$/°C/' /sys/class/thermal/thermal_zone0/temp)
+    echo -e "$cpu_temp"
+}
+
+print_vol(){
+    echo -e "$(amixer get Master | awk -F'[][]' 'END{ print $4":"$2 }')"
+}
+
+print_date(){
+	date "+%m-%d %H:%M"
+}
+
+while true; do
+    xsetroot -name " $(print_disk) | $(print_mem) | $(print_load) | $(print_temp) | $(print_vol) | $(print_date) "
+	sleep 1
+done
