@@ -31,9 +31,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     done
     unset f
 fi
-
 # compositor
-picom -f &
+picom -fb
 
 # wallpaper
 nitrogen --restore &
@@ -43,7 +42,8 @@ nitrogen --restore &
 
 # start loop
 while true; do
-    dwm >~/tmp/dwm.log 2>&1
+    dwm 2> ~/.dwm.log
 done
 
 exec dwm
+
