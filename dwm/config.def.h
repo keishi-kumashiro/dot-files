@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -51,12 +52,6 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
-#define XF86XK_MonBrightnessUp     0x1008ff02
-#define XF86XK_MonBrightnessDown   0x1008ff03
-#define XF86XK_AudioLowerVolume    0x1008ff11
-#define XF86XK_AudioMute           0x1008ff12
-#define XF86XK_AudioRaiseVolume    0x1008ff13
-#define XF86XK_AudioMicMute        0x1008ffb2
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
