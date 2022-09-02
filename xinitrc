@@ -31,19 +31,26 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     done
     unset f
 fi
+
 # compositor
 picom -fb
 
 # wallpaper
 nitrogen --restore &
 
+# for ufetch
+export WM=dwm
+
 # status bar
-~/.config/dwmstatus &
+#~/.config/dwmstatus &
+~/dwm-bar/dwm_bar.sh &
 
 # start loop
-while true; do
-    dwm 2> ~/.dwm.log
-done
+#while true; do
+#    dwm 2> ~/.dwm.log
+#done
 
-exec dwm
+dbus-launch dwm 2> ~/.dwm.log
+
+exec dbus-launch --sh-syntax --exit-with-session dwm
 
