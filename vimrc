@@ -1,16 +1,16 @@
+set nocompatible
+set viminfo='50,<1000,s100,:20,n~/.vim/viminfo
 set number
 set background=dark
 set noswapfile
 set clipboard=unnamedplus
+set smartindent
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set mouse=a
-if !has('nvim')
-  set viminfo='50,<1000,s100,:20,n~/.vim/viminfo
-  set ttymouse=sgr
-endif
+set ttymouse=sgr
 
 syntax on
 
