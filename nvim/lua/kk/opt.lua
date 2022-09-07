@@ -12,7 +12,9 @@ vim.opt.hlsearch = false
 vim.opt.scrolloff = 8
 
 vim.opt.signcolumn = "yes"
+vim.highlight.create("SignColumn", {ctermbg=0, guibg=lightgrey}, false)
 vim.opt.colorcolumn = "80"
+vim.highlight.create("ColorColumn", {ctermbg=0, guibg=lightgrey}, false)
 
 vim.opt.mouse = "a"
 
