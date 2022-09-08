@@ -1,4 +1,4 @@
 require("kk.g")
 require("kk.opt")
-require("kk.remap")
+require("kk.keymap")
 
