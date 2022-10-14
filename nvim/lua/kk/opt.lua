@@ -12,7 +12,7 @@ vim.opt.hlsearch = false
 
 vim.opt.scrolloff = 8
 
-vvim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "yes"
 vim.api.nvim_set_hl(0, "SignColumn", {ctermbg=0, guibg=lightgrey})
 vim.opt.colorcolumn = "80"
 vim.api.nvim_set_hl(0, "ColorColumn", {ctermbg=0, guibg=lightgrey})
