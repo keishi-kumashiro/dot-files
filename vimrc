@@ -16,7 +16,7 @@ set scrolloff=8
 set mouse=a
 set ttymouse=sgr
 
-set colorcolumm=80
+set colorcolumn=80
 highlight ColorColumn ctermbg=0
 
 syntax on
